@@ -42,8 +42,6 @@ float blueGamma;
     [_blueSlider setTarget:self];
     [_blueSlider setAction:@selector(blueSliderValueChanged:)];
     
-
-    
 }
 
 -(void)redSliderValueChanged:(NSSlider *)sender{
