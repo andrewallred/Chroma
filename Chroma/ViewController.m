@@ -74,7 +74,7 @@ float blueGamma;
     
     self.view.window.styleMask = self.view.window.styleMask & ~NSWindowStyleMaskResizable;
     
-    //= mainWindow.styleMask & ~NSWindowStyleMaskResizable;
+    self.view.window.movableByWindowBackground = YES;
     
 }
 
