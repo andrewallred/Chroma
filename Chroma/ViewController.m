@@ -46,7 +46,7 @@ float blueGamma;
 
 -(void)redSliderValueChanged:(NSSlider *)sender{
     
-    redMax = sender.intValue / 100.0f;
+    redMax = MAX(.1f, sender.intValue / 100.0f);
     
     CGSetDisplayTransferByFormula(CGMainDisplayID(), redMin, redMax, redGamma, greenMin, greenMax, greenGamma, blueMin, blueMax, blueGamma);
     
@@ -54,7 +54,7 @@ float blueGamma;
 
 -(void)greenSliderValueChanged:(NSSlider *)sender{
     
-    greenMax = sender.intValue / 100.0f;
+    greenMax = MAX(.1f, sender.intValue / 100.0f);
     
     CGSetDisplayTransferByFormula(CGMainDisplayID(), redMin, redMax, redGamma, greenMin, greenMax, greenGamma, blueMin, blueMax, blueGamma);
     
@@ -62,7 +62,7 @@ float blueGamma;
 
 -(void)blueSliderValueChanged:(NSSlider *)sender{
     
-    blueMax = sender.intValue / 100.0f;
+    blueMax = MAX(.1f, sender.intValue / 100.0f);
     
     CGSetDisplayTransferByFormula(CGMainDisplayID(), redMin, redMax, redGamma, greenMin, greenMax, greenGamma, blueMin, blueMax, blueGamma);
     
