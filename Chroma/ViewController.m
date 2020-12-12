@@ -72,6 +72,10 @@ float blueGamma;
     
     self.view.window.backgroundColor = [NSColor darkGrayColor];
     
+    self.view.window.styleMask = self.view.window.styleMask & ~NSWindowStyleMaskResizable;
+    
+    //= mainWindow.styleMask & ~NSWindowStyleMaskResizable;
+    
 }
 
 
