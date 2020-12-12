@@ -70,6 +70,8 @@ float blueGamma;
 
 -(void) viewDidAppear {
     
+    self.view.window.backgroundColor = [NSColor darkGrayColor];
+    
 }
 
 
