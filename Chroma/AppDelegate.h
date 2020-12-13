@@ -6,9 +6,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DisplayManager.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (strong, nonatomic) DisplayManager* displayManager;
 
 @end
 

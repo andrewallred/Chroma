@@ -14,12 +14,19 @@
 
 @implementation AppDelegate
 
+- (id)init {
+    
+    self = [super init];
+    if (self) {
+        NSLog(@"init");
+        self.displayManager = [[DisplayManager alloc] init];
+    }
+    return self;
+        
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    
-    
-      
-    
 }
 
 

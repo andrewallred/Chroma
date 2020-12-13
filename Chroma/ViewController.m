@@ -7,31 +7,20 @@
 
 #import "ViewController.h"
 #import <CoreGraphics/CGDirectDisplay.h>
+#import "AppDelegate.h"
 
-
-
-@implementation ViewController
-
-float redMin;
-float redMax;
-float redGamma;
-
-float greenMin;
-float greenMax;
-float greenGamma;
-
-float blueMin;
-float blueMax;
-float blueGamma;
+@implementation ViewController {
+    AppDelegate* appDelegate;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CGGetDisplayTransferByFormula(CGMainDisplayID(), &redMin, &redMax, &redGamma, &greenMin, &greenMax, &greenGamma, &blueMin, &blueMax, &blueGamma);
+    appDelegate = (AppDelegate*)[[NSApplication sharedApplication] delegate];
     
-    _redSlider.intValue = redMax * 100;
-    _greenSlider.intValue = greenMax * 100;
-    _blueSlider.intValue = blueMax * 100;
+//    [_redSlider setIntValue:appDelegate.displayManager.redMax];
+//    [_greenSlider setIntValue:appDelegate.displayManager.greenMax];
+//    [_blueSlider setIntValue:appDelegate.displayManager.blueMax];
     
     [_redSlider setTarget:self];
     [_redSlider setAction:@selector(redSliderValueChanged:)];
@@ -46,29 +35,31 @@ float blueGamma;
 
 -(void)redSliderValueChanged:(NSSlider *)sender{
     
-    redMax = MAX(.1f, sender.intValue / 100.0f);
+    appDelegate.displayManager.redMax = MAX(.1f, sender.intValue / 100.0f);
     
-    CGSetDisplayTransferByFormula(CGMainDisplayID(), redMin, redMax, redGamma, greenMin, greenMax, greenGamma, blueMin, blueMax, blueGamma);
+    [appDelegate.displayManager updateDisplay];
     
 }
 
 -(void)greenSliderValueChanged:(NSSlider *)sender{
     
-    greenMax = MAX(.1f, sender.intValue / 100.0f);
+    appDelegate.displayManager.greenMax = MAX(.1f, sender.intValue / 100.0f);
     
-    CGSetDisplayTransferByFormula(CGMainDisplayID(), redMin, redMax, redGamma, greenMin, greenMax, greenGamma, blueMin, blueMax, blueGamma);
+    [appDelegate.displayManager updateDisplay];
     
 }
 
 -(void)blueSliderValueChanged:(NSSlider *)sender{
     
-    blueMax = MAX(.1f, sender.intValue / 100.0f);
+    appDelegate.displayManager.blueMax = MAX(.1f, sender.intValue / 100.0f);
     
-    CGSetDisplayTransferByFormula(CGMainDisplayID(), redMin, redMax, redGamma, greenMin, greenMax, greenGamma, blueMin, blueMax, blueGamma);
+    [appDelegate.displayManager updateDisplay];
     
 }
 
 -(void) viewDidAppear {
+    
+
     
 }
 
