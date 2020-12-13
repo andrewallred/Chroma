@@ -21,7 +21,7 @@
     self.window.movableByWindowBackground = YES;
     
     [self.window setOpaque:NO];
-    [self.window setHasShadow:NO];        
+    [self.window setHasShadow:NO];
     
 }
 
