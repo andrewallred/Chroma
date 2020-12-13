@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		85DDB08925831F51004CFFB5 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DDB08825831F51004CFFB5 /* WindowController.m */; };
+		85DDB08F25858B18004CFFB5 /* NSViewWithRoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DDB08E25858B18004CFFB5 /* NSViewWithRoundedCorners.m */; };
 		85EEA16A2581C02A00C59989 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EEA1692581C02A00C59989 /* AppDelegate.m */; };
 		85EEA16D2581C02A00C59989 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EEA16C2581C02A00C59989 /* ViewController.m */; };
 		85EEA16F2581C02C00C59989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85EEA16E2581C02C00C59989 /* Assets.xcassets */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		85DDB08725831F51004CFFB5 /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		85DDB08825831F51004CFFB5 /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		85DDB08D25858B18004CFFB5 /* NSViewWithRoundedCorners.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSViewWithRoundedCorners.h; sourceTree = "<group>"; };
+		85DDB08E25858B18004CFFB5 /* NSViewWithRoundedCorners.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSViewWithRoundedCorners.m; sourceTree = "<group>"; };
 		85EEA1652581C02A00C59989 /* Chroma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chroma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EEA1682581C02A00C59989 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		85EEA1692581C02A00C59989 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				85EEA1762581C02C00C59989 /* Chroma.entitlements */,
 				85DDB08725831F51004CFFB5 /* WindowController.h */,
 				85DDB08825831F51004CFFB5 /* WindowController.m */,
+				85DDB08D25858B18004CFFB5 /* NSViewWithRoundedCorners.h */,
+				85DDB08E25858B18004CFFB5 /* NSViewWithRoundedCorners.m */,
 			);
 			path = Chroma;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			files = (
 				85EEA16D2581C02A00C59989 /* ViewController.m in Sources */,
 				85DDB08925831F51004CFFB5 /* WindowController.m in Sources */,
+				85DDB08F25858B18004CFFB5 /* NSViewWithRoundedCorners.m in Sources */,
 				85EEA1752581C02C00C59989 /* main.m in Sources */,
 				85EEA16A2581C02A00C59989 /* AppDelegate.m in Sources */,
 			);

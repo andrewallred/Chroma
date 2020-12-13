@@ -70,12 +70,6 @@ float blueGamma;
 
 -(void) viewDidAppear {
     
-    self.view.window.backgroundColor = [NSColor darkGrayColor];
-    
-    self.view.window.styleMask = self.view.window.styleMask & ~NSWindowStyleMaskResizable;
-    
-    self.view.window.movableByWindowBackground = YES;
-    
 }
 
 

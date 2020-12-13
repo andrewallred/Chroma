@@ -16,7 +16,13 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    self.window.backgroundColor = [NSColor clearColor];
+    self.window.styleMask = self.window.styleMask & ~NSWindowStyleMaskResizable;
+    self.window.movableByWindowBackground = YES;
+    
+    [self.window setOpaque:NO];
+    [self.window setHasShadow:NO];        
+    
 }
 
 - (BOOL) windowShouldClose:(NSWindow *)sender {
