@@ -6,11 +6,18 @@
 //
 
 #import "NSViewWithRoundedCorners.h"
+#import "DisplayManager.h"
+#import "AppDelegate.h"
 
-@implementation NSViewWithRoundedCorners
+@implementation NSViewWithRoundedCorners {
+    AppDelegate* appDelegate;
+}
 
 - (void)awakeFromNib{
     NSLog(@"awakeFromNib");
+    
+    appDelegate = (AppDelegate*)[[NSApplication sharedApplication] delegate];
+    
 }
 
 - (id) init {
@@ -36,10 +43,55 @@
     NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:rect xRadius:10 yRadius:10];
     [path addClip];
     
-    NSGradient* gradient = [[NSGradient alloc] initWithStartingColor:[NSColor darkGrayColor] endingColor:[NSColor darkGrayColor]];
+    NSGradient* backgroundGradient = [[NSGradient alloc] initWithStartingColor:[NSColor whiteColor] endingColor:[NSColor whiteColor]];
     
-    [gradient drawInRect:self.frame angle:90];
+    [backgroundGradient drawInRect:self.frame angle:90];
     
+    CGContextRef c = [NSGraphicsContext currentContext].CGContext;
+    
+    int size = 20;
+    float width = self.frame.size.height;
+    //float halfWidth = width / 2;
+    float height = self.frame.size.height;
+    //float halfHeight = height / 2;
+    
+    for (int i = 0; i < width; i += size) {
+        for (int j = 0; j < height; j += size) {
+            
+            [[self getColorFromCoordinatesFromX:i Y:j forSize:self.frame.size] setFill];
+            CGContextFillRect(c, CGRectMake(i, j, size, size));
+            
+        }
+    }
+    
+}
+
+-(NSColor*) getColorFromCoordinatesFromX:(int) x Y:(int) y forSize:(CGSize) size {
+    return [NSColor colorWithRed:1 green:y/size.height blue:x/size.width alpha:1.0];
+}
+
+BOOL isDragging = NO;
+-(void) mouseDragged:(NSEvent *)event {
+    isDragging = YES;
+}
+
+-(void) mouseUp:(NSEvent *)event {
+    
+    if (!isDragging) {
+        
+        NSPoint point = [event locationInWindow];
+        
+        NSColor* color = [self getColorFromCoordinatesFromX:point.x Y:point.y forSize:self.frame.size];
+        
+        appDelegate.displayManager.redMax = color.redComponent;
+        appDelegate.displayManager.greenMax = color.greenComponent;
+        appDelegate.displayManager.blueMax = color.blueComponent;
+        
+        [appDelegate.displayManager updateDisplay];
+        
+    }
+    
+    isDragging = NO;
 }
 
 @end

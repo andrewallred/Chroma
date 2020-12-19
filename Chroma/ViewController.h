@@ -9,11 +9,5 @@
 
 @interface ViewController : NSViewController
 
-@property (weak) IBOutlet NSSlider *redSlider;
-@property (weak) IBOutlet NSSlider *greenSlider;
-@property (weak) IBOutlet NSSlider *blueSlider;
-
-
-
 @end
 
