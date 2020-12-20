@@ -11,6 +11,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (strong, nonatomic) DisplayManager* displayManager;
+@property (strong, nonatomic) NSViewController* mainViewController;
 
 @end
 

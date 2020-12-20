@@ -9,11 +9,15 @@
 #import <CoreGraphics/CGDirectDisplay.h>
 #import "AppDelegate.h"
 
-@implementation ViewController
+@implementation ViewController {
+    AppDelegate* appDelegate;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    appDelegate = (AppDelegate*)[[NSApplication sharedApplication] delegate];
+    appDelegate.mainViewController = self;
 }
 
 - (void)setRepresentedObject:(id)representedObject {

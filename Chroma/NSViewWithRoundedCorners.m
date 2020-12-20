@@ -70,28 +70,18 @@
     return [NSColor colorWithRed:1 green:y/size.height blue:x/size.width alpha:1.0];
 }
 
-BOOL isDragging = NO;
--(void) mouseDragged:(NSEvent *)event {
-    isDragging = YES;
-}
-
--(void) mouseUp:(NSEvent *)event {
+-(void) mouseDown:(NSEvent *)event {
     
-    if (!isDragging) {
-        
-        NSPoint point = [event locationInWindow];
-        
-        NSColor* color = [self getColorFromCoordinatesFromX:point.x Y:point.y forSize:self.frame.size];
-        
-        appDelegate.displayManager.redMax = color.redComponent;
-        appDelegate.displayManager.greenMax = color.greenComponent;
-        appDelegate.displayManager.blueMax = color.blueComponent;
-        
-        [appDelegate.displayManager updateDisplay];
-        
-    }
+    NSPoint point = [event locationInWindow];
     
-    isDragging = NO;
+    NSColor* color = [self getColorFromCoordinatesFromX:point.x Y:point.y forSize:self.frame.size];
+    
+    appDelegate.displayManager.redMax = color.redComponent;
+    appDelegate.displayManager.greenMax = color.greenComponent;
+    appDelegate.displayManager.blueMax = color.blueComponent;
+    
+    [appDelegate.displayManager updateDisplay];
+        
 }
 
 @end
