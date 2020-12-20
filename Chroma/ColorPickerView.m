@@ -5,11 +5,11 @@
 //  Created by Allred, Andrew on 12/12/20.
 //
 
-#import "NSViewWithRoundedCorners.h"
+#import "ColorPickerView.h"
 #import "DisplayManager.h"
 #import "AppDelegate.h"
 
-@implementation NSViewWithRoundedCorners {
+@implementation ColorPickerView {
     AppDelegate* appDelegate;
 }
 
