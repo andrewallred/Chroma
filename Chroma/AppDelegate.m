@@ -43,6 +43,8 @@ BOOL isPopover = NO;
     self.statusItem.button.image = [NSImage imageNamed:@"Icon"];
     self.statusItem.button.action = @selector(togglePopover:);
     
+    [[NSApplication sharedApplication] activateIgnoringOtherApps : YES];
+    
 }
 
 -(void) togglePopover:(id) sender {
