@@ -34,8 +34,21 @@
     
 }
 
-- (void)updateDisplay {
-    CGSetDisplayTransferByFormula(CGMainDisplayID(), redMin, redMax, redGamma, greenMin, greenMax, greenGamma, blueMin, blueMax, blueGamma);
+CGDirectDisplayID displays[100];
+uint32_t numDisplays;
+
+-(void)updateDisplays {
+    
+    CGGetActiveDisplayList(100, displays, &numDisplays);
+    
+    for (int i = 0; i < numDisplays; i++) {
+        [self updateDisplay:displays[i]];
+    }
+
+}
+
+- (void)updateDisplay:(CGDirectDisplayID) displayId {
+    CGSetDisplayTransferByFormula(displayId, redMin, redMax, redGamma, greenMin, greenMax, greenGamma, blueMin, blueMax, blueGamma);
 }
 
 - (void)setColor:(NSColor*)color {

@@ -25,7 +25,7 @@
     NSLog(@"Clicked");
     
     [appDelegate.displayManager setColor:self.color];
-    [appDelegate.displayManager updateDisplay];
+    [appDelegate.displayManager updateDisplays];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {

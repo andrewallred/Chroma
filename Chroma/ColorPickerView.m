@@ -80,7 +80,7 @@
     appDelegate.displayManager.greenMax = color.greenComponent;
     appDelegate.displayManager.blueMax = color.blueComponent;
     
-    [appDelegate.displayManager updateDisplay];
+    [appDelegate.displayManager updateDisplays];
         
 }
 

@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) float blueMax;
 @property (assign) float blueGamma;
 
-- (void)updateDisplay;
+- (void)updateDisplays;
 - (void)setColor:(NSColor*)color;
 
 @end
