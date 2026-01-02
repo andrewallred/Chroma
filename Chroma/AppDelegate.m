@@ -62,6 +62,13 @@ BOOL isPopover = NO;
         } else {
             [NSApp setActivationPolicy: NSApplicationActivationPolicyRegular];
             [[NSApplication sharedApplication] activateIgnoringOtherApps : YES];
+            
+            // Show and bring the main window to the front
+            NSWindow *mainWindow = [NSApplication sharedApplication].windows.firstObject;
+            if (mainWindow) {
+                [mainWindow makeKeyAndOrderFront:nil];
+                [mainWindow orderFrontRegardless];
+            }
         }
     }
 
